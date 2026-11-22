@@ -1,5 +1,9 @@
-# Django Ecommerce Architecture
+# Django E-commerce Application — Part One
 
-I explored the initial structure of a Django e-commerce application.
+I developed and explored the initial Django e-commerce application structure. This folder includes my original Part One project archive from HyperionDev.
 
-The implementation or supporting evidence for this topic may be in my related application or algorithm folders.
+## Source archive
+
+- [Original project ZIP](ecommerce-store-part-one-original.zip) — original project files, preserved without modification.
+
+This is Part One only; the separate Part Two project is excluded from this portfolio.
