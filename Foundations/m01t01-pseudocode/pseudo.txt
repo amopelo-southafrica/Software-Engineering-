@@ -1,0 +1,51 @@
+//Problem 1 
+
+get a postive number repeatedly 
+
+if the user enters a zero value 
+       print the largest number entered 
+
+// Problem 2
+
+create a variable called first_name for user to store their name 
+
+ask user for their name 
+
+when the user enters their name 
+
+print "Hello world" and first_name 
+		
+//Problem 3
+
+read arbitary number of intergers 
+
+Calculate average by adding intergers and dividing by number of intergers 
+
+   print "average"
+
+// Problem 4 
+
+read grocery list
+
+print products in alphabetaical order that are still left to buy
+
+//Problem 5 
+
+Read x, y 
+
+Calculate S by adding X and Y 
+
+THEN 
+
+  Calculate A by dividing the value found in S with 2 
+  
+THEN 
+
+Calculate P by multiplying X with Y 
+
+Once S, A, P is calculated 
+    
+   print S,A,P
+
+
+ 
