@@ -29,3 +29,15 @@ I build Python applications, explore algorithms, and document how software syste
 ## Tools
 
 Python · SQL · SQLite · Django · HTML · CSS · Bootstrap · Docker · Git · PowerShell
+
+## Research and tested extensions
+
+| Project | Research paper | PDF |
+|:--|:--|:--|
+| Task-management workflow | [Read](Applications/task-management-workflow/RESEARCH_PAPER.md) | [PDF](Applications/task-management-workflow/RESEARCH_PAPER.pdf) |
+| Task-system architecture, MVC and UML | [Read](Software-Architecture-and-Design/modelling-a-task-management-system/RESEARCH_PAPER.md) | [PDF](Software-Architecture-and-Design/modelling-a-task-management-system/RESEARCH_PAPER.pdf) |
+| SQLite bookstore database | [Read](Databases/bookstore-database-application/RESEARCH_PAPER.md) | [PDF](Databases/bookstore-database-application/RESEARCH_PAPER.pdf) |
+
+The [bookstore project](Databases/bookstore-database-application/) includes a **supplementary verified implementation** and 10 automated tests. Its original scripts are preserved unchanged. The [Docker exercise](Web-Systems-and-Delivery/containerising-applications-with-docker/) also includes its original source archive, restored with a matching Git object hash.
+
+Not every portfolio exercise has a research paper or production validation. Original submissions, later repairs, and research interpretations are identified separately.
