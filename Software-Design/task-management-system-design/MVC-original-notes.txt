@@ -1,0 +1,15 @@
+1. User - The worker interacts with the View to create , read, edit or delete a task
+
+2. View - shows the User options to create , read , edit or delete a task 
+
+2.1 Sends the input to the controller and gets the data that it needs to show the user 
+
+3. Creates functionalities from the selected option from the User that they chose from the user
+3.1 Creates , Edits , Reads and  Deletes a task
+3.2 Pulls data from the web API to complete the functionality 
+3.3 Sends data about the task to the database 
+3.4 Processes the functions at the model using the RAM 
+
+4. Web Apis use the netwrok access to receive or send back data to the controller so that it can be received or viewed from the controller to the View 
+5. Database stores the task from the Controller to the File Storage 
+6. Model updates the task if there is a need to delete or edit a task through a process
