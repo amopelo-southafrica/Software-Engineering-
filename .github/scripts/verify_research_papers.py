@@ -11,7 +11,7 @@ for file in sorted(Path(".").rglob("RESEARCH_PAPER.pdf")):
     all_pages = [p.extract_text() or "" for p in reader.pages]
     refs_index = next(
         (i for i, content in enumerate(all_pages[2:], start=2)
-         if re.search(r"(?im)^\\s*References\\s*$", content)),
+         if re.search(r"(?im)^\s*References\s*$", content)),
         None,
     )
     # Cover and TOC are each one page; references begin at refs_index.
