@@ -41,3 +41,7 @@ Python · SQL · SQLite · Django · HTML · CSS · Bootstrap · Docker · Git �
 The [bookstore project](Databases/bookstore-database-application/) includes a **supplementary verified implementation** and 10 automated tests. Its original scripts are preserved unchanged. The [Docker exercise](Web-Systems-and-Delivery/containerising-applications-with-docker/) also includes its original source archive, restored with a matching Git object hash.
 
 Not every portfolio exercise has a research paper or production validation. Original submissions, later repairs, and research interpretations are identified separately.
+
+## Migration provenance
+
+[Source-to-portfolio migration audit (22 November 2026)](SOURCE_MIGRATION_AUDIT_2026-11-22.md) documents exact-source SHA checks and the remaining archives or potentially sensitive files that require an inclusion decision.
