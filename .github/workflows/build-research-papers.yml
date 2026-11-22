@@ -25,7 +25,9 @@ jobs:
           python -m pip install --user markdown2 beautifulsoup4 weasyprint pypdf
       - name: Render PDF manuscripts
         run: python .github/scripts/render_research.py
-      - name: Check paper length and pages\n        run: python .github/scripts/verify_research_papers.py\n      - name: Commit generated PDFs
+      - name: Check paper length and pages
+        run: python .github/scripts/verify_research_papers.py
+      - name: Commit generated PDFs
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
