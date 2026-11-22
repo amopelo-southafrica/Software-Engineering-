@@ -1,0 +1,18 @@
+1. HTTP state, authentication, and session management (150–250 words)
+HTTP is inherently a stateless protocol, meaning each request–response cycle is 
+independent and the server does not remember previous interactions with a client . To overcome this limitation, web applications implement
+mechanisms such as cookies, sessions, and tokens to preserve state across multiple requests. Cookies are small pieces of data stored in the user’s browser and
+automatically sent with each request, often containing a session identifier that links the client to server-side data . 
+On the server, sessions maintain user-specific information such as authentication status, permissions, and preferences, allowing the application to treat multiple requests as part of a continuous interaction . In authentication, once a user logs in, the server generates a session ID or token and sends it to the client, which is then used to verify identity in subsequent requests. Session-based authentication is considered stateful, as the server stores session data, while token-based approaches (e.g., JWT) are stateless, embedding all necessary information within each request . Together, these techniques simulate continuity in an otherwise stateless environment, enabling features like login persistence, shopping carts, and personalized content.
+
+2. Django migrations to MariaDB (150–250 words)
+Migrating a Django application to a server-based relational database like MariaDB involves configuring the database, 
+linking it to Django, and applying migrations. First, MariaDB must be installed and a database with appropriate credentials created 
+(e.g., using SQL commands like CREATE DATABASE and user privileges) . 
+Next, Django is configured by updating the DATABASES setting in settings.py, 
+specifying the backend engine (django.db.backends.mysql for MariaDB), database name, user, password, host, and port .
+A compatible database adapter such as mysqlclient must also be installed to allow Django’s ORM to communicate with MariaDB . 
+Once configured, migrations are executed in two main steps: makemigrations, which generates migration files reflecting model changes, and migrate
+which applies these changes to the actual database schema . The migrate command reads the migration files and creates or updates tables accordingly, 
+ensuring the database structure matches the Django models . This process acts as version control for the database schema, allowing developers to safely 
+evolve the database over time. Proper execution ensures that the Django application is fully synchronized with the MariaDB database in a production-ready environment.
