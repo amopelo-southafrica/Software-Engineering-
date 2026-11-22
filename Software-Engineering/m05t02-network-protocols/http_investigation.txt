@@ -1,0 +1,10 @@
+1.curl -v https://httpbin.org/get 
+-The request received 305 byte of content type from the server 
+-Had a 200 status code meaning that ther server got the response smoothly
+2.curl -X POST https://httpbin.org/post \ -d "key=value" \ -H "Content-Type: application/x-www-form-urlencoded"
+- Posted 477 byte of content
+- Status code of 200
+3.curl -I https://httpbin.org/status/404 
+-The message showed as 'Not Found' showing that there was not error in the HTML link
+curl -I https://httpbin.org/status/403
+- The message showed as 'Forbidden' meaning that access was denied 
