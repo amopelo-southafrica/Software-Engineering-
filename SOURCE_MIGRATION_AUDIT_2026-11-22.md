@@ -1,55 +1,68 @@
 # HyperionDev portfolio migration audit — 22 November 2026
 
-## Scope and method
+## Source and explicit exclusions
 
-**Source repository:** [hyperiondev-bootcamps/AP25070018785](https://github.com/hyperiondev-bootcamps/AP25070018785)
+Source: private `hyperiondev-bootcamps/AP25070018785` repository (841 files on the `main` tree at this audit).
 
-**Destination portfolios:**
+Target repositories:
 - [AI Engineering and Research](https://github.com/amopelo-southafrica/AI-Engineering-and-Research)
 - [Mathematics and Statistics](https://github.com/amopelo-southafrica/Mathematics-and-Statistics)
 - [Software Engineering](https://github.com/amopelo-southafrica/Software-Engineering-)
 
-The complete source `main` tree contained **841 files** at the audit time. This is **not** a claim that 841 files should be republished. Many are training handouts, examples, website assets, duplicates, or materials that the owner asked to exclude.
+The owner's **precise November 22 exclusions** are: **Django Sticky Notes Application Part One; eCommerce Application Part Two; Capstone Project Consolidation; mastering sequential models; the neural-networks capstone; and every Level 4 Python Programme project.** These projects should not be restored. **eCommerce Application Part One is permitted**, and its original ZIP is already in the Software Engineering portfolio.
 
-I made a **selected source-file inventory** of 128 non-curriculum candidates from Levels 1–3, prioritising `.py`, `.ipynb`, `.csv`, `.txt`, `.zip` and certain other useful formats. The inventory deliberately omitted files in common training/example folders, numbered PDF handouts, Level 4 Python work, the named sequential/neural capstones and e-commerce projects.
+Exclude generated `venv`, `__pycache__` and `.git` folders from project uploads. Many source files are instructor examples, course PDFs or vendor content and should not be republished as original student work.
 
-A comparison of **Git blob SHA hashes** against the three destination repository trees found:
+## Selected source-file comparison
 
-| Selected-file inventory check | Count |
+I selected 128 likely submission-related files from Levels 1–3 by file type and path, excluding numbered course PDF handouts, examples, the named sequential/neural tasks, eCommerce paths and Level 4. This selection is deliberately **not** all 841 source files.
+
+I compared the Git blob SHA of each selected source file against **all three destination trees**, which detects exact byte-for-byte copies even after files are renamed.
+
+| Metric | Number |
 |:--|--:|
-| Candidates in the scoped inventory | 128 |
-| Exact content matches in destination portfolios | 104 |
-| No matching blob hash located | 24 |
+| Source files in entire repository | 841 |
+| Files in this selected audit inventory | 128 |
+| Exact source-content matches in destinations | 104 |
+| No exact SHA match located | 24 |
+| Of those 24, expressly excluded by the user | 16 |
+| Remaining unmatched candidates requiring review/upload | 8 |
 
-Hash equality verifies that a source file's bytes are present in at least one destination, even if its filename or directory changed. A nonmatch **does not always prove a missing submission**, because the destination may contain an edited, converted or extracted version.
+A hash mismatch does **not** necessarily mean an omitted project: a source file may have been intentionally rewritten, converted or extracted into several destination files.
 
-## Remaining unmatched files requiring explicit classification
+## The 16 unmatched source files intentionally excluded
 
-| Category | Count | Assessment |
+- **15** loose code/template files and ZIPs under `Level 2 - Software Engineering/M06T04 – Django – Sticky Notes Application Part 1`.
+- **1** notebook under `Level 3 - Data Science/M12T07 – Capstone Project – Neural Networks`.
+
+Those entries remain out of scope under the owner's instructions. The other named exclusions were already removed by this audit's initial selection filters.
+
+## Eight remaining unmatched eligible-file candidates
+
+| Source category | Number | Disposition |
 |:--|--:|:--|
-| Django Sticky Notes Part One source and archives | 15 | Do not mirror until the earlier Django exclusions are resolved; related portfolio folder exists |
-| Task Manager capstone text data (`tasks.txt`, `user.txt`, `user_overview.txt`) | 3 | Inspect/redact before any public upload; may include identifiers, account records or credentials |
-| Git/deployment screenshots, including a CV image | 3 | Do not publish without checking private personal content |
-| `taskmanager.zip` from OOP Modules | 1 | Large original archive (~12.3 MB); inspect contents, license and duplication before migration |
-| `news_project.zip` Django capstone archive | 1 | Large original archive (~25.7 MB); inspect and confirm exclusion status before migration |
-| Neural-networks capstone notebook | 1 | Intentionally out of scope under the user's stated exclusions |
-| **Total** | **24** | |
+| `tasks.txt`, `user.txt`, `user_overview.txt` in Level 1 Task Manager capstone | 3 | Do not automatically publish a user-record file: `user.txt` has two-field records consistent with username/credential pairs; inspect and redact first |
+| Version-control screenshot, static-deployment screenshot and `my_cv.png` | 3 | Inspect for personal information, contacts, identifiers and unintended exposure before copying to public repositories |
+| `taskmanager.zip` under M06T03 OOP Modules | 1 | 12,291,901-byte original archive; requires inspection and removal of generated dependencies/venv if present |
+| `news_project.zip` under M06T08 News Application | 1 | 25,678,933-byte original archive; **in scope** (distinct from excluded Capstone Project Consolidation), but requires inspection and removal of generated dependencies/venv if present |
+| **Total** | **8** | |
 
-The 15 Django entries include loose Python and HTML source, a test file, and two archived app versions. They should not be treated as automatically authorised for copying, particularly given the prior exclusion of specific Django and e-commerce work.
+The original source repository is private, whereas the portfolio repositories are public. Replicating files with possible account credentials, personal details or embedded generated dependencies without inspection would be inappropriate.
 
-## Completed work verified during this pass
+The connected GitHub tool returned no content for the original 12.3 MB binary ZIP through its content endpoint, and the blob endpoint could not decode the archive as text. Thus the present workflow **could not inspect or directly upload those large original ZIPs safely**. They remain genuinely unfinished, not silently marked complete.
 
-- Restored the original `dockerfolder.zip` to [the Docker portfolio](Web-Systems-and-Delivery/containerising-applications-with-docker/dockerfolder-original.zip); source and destination Git blob SHA both equal `a3ecd70eb901a5fa31472b0c92419713f3267312`.
-- Preserved the original source archive and instructions separately from later research or refactoring.
-- Added research indexing to all three repository READMEs, with links to available Markdown papers and PDFs.
-- Verified that the [SQLite bookstore supplementary implementation](Databases/bookstore-database-application/) passes ten automated tests; its original submissions remain preserved.
+## Verified uploads and research deliverables
 
-## Limitations and final reconciliation tasks
+- Original Docker project archive restored to [Docker exercise](Web-Systems-and-Delivery/containerising-applications-with-docker/dockerfolder-original.zip), with source and destination Git SHA `a3ecd70eb901a5fa31472b0c92419713f3267312` matching.
+- Original eCommerce Part One archive present at [eCommerce architecture](Web-Systems-and-Delivery/django-ecommerce-architecture/ecommerce-store-part-one-original.zip); Part Two remains excluded.
+- Bookstore original scripts preserved, while a separate [verified SQLite implementation](Databases/bookstore-database-application/shelf_track_verified.py) passes 10 automated tests.
+- Markdown research papers and generated PDFs indexed in all three portfolio READMEs.
 
-1. **Scope confirmation:** Resolve which Django, e-commerce and news archives are intentionally excluded, rather than silently publishing them.
-2. **Sensitive-file inspection:** Review task-manager user data and screenshots before any migration to these public repositories.
-3. **Large-archive evaluation:** Determine whether `taskmanager.zip` and `news_project.zip` contain meaningful source work or large dependency/vendor directories.
-4. **Completeness:** This SHA-based shortlist is **not a full manual audit of every one of the source's 841 files**, and omitted instructional/example files were not exhaustively classified.
-5. **Folder renaming:** No additional directory names were changed during this audit. Confirm final naming conventions after inclusion/exclusion decisions.
+## Outstanding work
 
-The audit supports an accurate status statement: **the selected portfolio already contains substantial exact source copies, but full migration completion is not yet established**.
+1. Inspect and recover the **two permitted large ZIP archives**, ideally outside this restricted binary-read connector, and remove any `venv`, dependency cache, source secrets or generated noise before uploading.
+2. Inspect and sanitise Level 1 task user data and the three screenshots before any public upload. The source content may need to be replaced by safe example fixtures rather than copied verbatim.
+3. Conduct a broader **file-by-file** assessment of remaining course materials and authored deliverables that the selected-file filters deliberately did not cover.
+4. Reconcile folders and aliases after confirming the final set of included projects. No additional project folders were renamed in this pass.
+
+**Current status:** substantially migrated and documented, but not fully complete. The 104 exact matches describe the selected source-file audit, not 104 complete projects and not 104 out of all 841 files.
