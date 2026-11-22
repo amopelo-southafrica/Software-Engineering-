@@ -1,4 +1,0 @@
-1. Normalisation is the process of structuring databases so that redundancy is reduced and updates do not cause inconsistencies
-2. 1NF contains atomaic values , one type of data, and uniquely identfied
-3. 2NF has no partial dependencies
-4. 3NF has no transitive dependencies and a non key column must not depend on another non key column
