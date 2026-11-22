@@ -8,6 +8,9 @@ on:
   workflow_dispatch:
 permissions:
   contents: write
+concurrency:
+  group: research-papers-${{ github.ref }}
+  cancel-in-progress: false
 jobs:
   render:
     runs-on: ubuntu-latest
@@ -29,5 +32,20 @@ jobs:
           find . -name RESEARCH_PAPER.pdf -print0 | xargs -0 -r git add
           if ! git diff --cached --quiet; then
             git commit -m "Render formal research paper PDFs without cover dates"
-            git push
+            # A project upload may land while rendering. Rebase our PDF-only
+            # commit over the newer repository head rather than force-pushing.
+            for attempt in 1 2 3 4 5; do
+              if git push origin "HEAD:${GITHUB_REF_NAME}"; then
+                exit 0
+              fi
+              git fetch origin "${GITHUB_REF_NAME}"
+              if ! git rebase "origin/${GITHUB_REF_NAME}"; then
+                git rebase --abort
+                echo "PDF update conflicts with a newer commit; refusing to overwrite."
+                exit 1
+              fi
+              sleep 2
+            done
+            echo "PDF push failed after 5 non-destructive retries"
+            exit 1
           fi
