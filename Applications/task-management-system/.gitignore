@@ -1,0 +1,8 @@
+# Local accounts and task records
+user.txt
+tasks.txt
+user_overview.txt
+task_overview.txt
+__pycache__/
+*.pyc
+.env
